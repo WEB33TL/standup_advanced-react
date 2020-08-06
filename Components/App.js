@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { Component } from 'react'
+import todo from '../Utils/todo'
+import Form from './Form'
 
-const App = () => {
-  return (
-    <div>
-    </div>
-  )
+export class App extends Component {
+  render() {
+    console.log(todo)
+    return (
+      <div>
+        <Form />
+      </div>
+    )
+  }
 }
 
 export default App
