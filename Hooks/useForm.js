@@ -1,27 +1,25 @@
 import { useLocalStorage } from './useLocalStorage'
 import { useState } from 'react'
-
-// export const useForm2 = () => {
-//   const [value, setValue] = useLocalStorage()
-
-//   return [value, setValue]
-// }
+import todoItem from '../Utils/todo'
 
 
 export const useForm = () => {
-  const [value, setValue] = useState()
+  const [todo, setTodo] = useState(todoItem)
+  const [value, setValue] = useState({ todo: '' })
 
   const handleChange = e => {
     setValue({ ...value, [e.target.name]: e.target.value })
   }
 
+
   const handleSubmit = (e) => {
     e.preventDefault()
-    onAdd(value)
-    setValue({ ...value, [e.target.name]: '' })
+    console.log(e)
+    setTodo([...todo, { task: value.todo }])
+    setValue({ todo: "" })
   }
 
-  return [value, handleChange, handleSubmit]
+  return [todo, value, handleChange, handleSubmit]
 }
 
 

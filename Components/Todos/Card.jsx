@@ -2,7 +2,7 @@ import React from 'react'
 
 const Card = (props) => {
   const { todo } = props
-  console.log(todo, 'this is todo')
+  console.log('inside Card --> ', props)
   return (
     <div>
       <p>Task:{todo.task}</p>
